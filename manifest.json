@@ -1,0 +1,42 @@
+{
+  "manifest_version": 3,
+  "name": "YouTube Live Overlay",
+  "version": "1.5.1",
+  "description": "YouTube Liveのチャットをフルスクリーン動画の上に表示します。",
+  "permissions": [
+    "storage"
+  ],
+  "action": {
+    "default_title": "YouTube Live Overlay",
+    "default_popup": "src/popup/popup.html"
+  },
+  "background": {
+    "service_worker": "src/background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.youtube.com/*"
+      ],
+      "js": [
+        "src/shared/settings.js",
+        "src/content/overlay.js",
+        "src/content/youtube.js"
+      ],
+      "css": [
+        "src/styles/overlay.css"
+      ],
+      "run_at": "document_start"
+    },
+    {
+      "matches": [
+        "https://www.youtube.com/*"
+      ],
+      "js": [
+        "src/content/live-chat.js"
+      ],
+      "all_frames": true,
+      "run_at": "document_start"
+    }
+  ]
+}

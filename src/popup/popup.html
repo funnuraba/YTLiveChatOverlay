@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>YouTube Live Overlay</title>
+    <link rel="stylesheet" href="popup.css">
+  </head>
+  <body>
+    <main class="popup">
+      <h1>YouTube Live Overlay</h1>
+      <label class="toggle" for="enabled">
+        <span>オーバーレイ</span>
+        <span class="switch">
+          <input id="enabled" type="checkbox" role="switch">
+          <span class="slider" aria-hidden="true"></span>
+        </span>
+        <strong id="status">ON</strong>
+      </label>
+      <section class="help" aria-labelledby="help-title">
+        <h2 id="help-title">操作</h2>
+        <dl>
+          <div><dt>ホイール</dt><dd>過去コメントをスクロール</dd></div>
+          <div><dt>青い↓ボタン</dt><dd>最新コメントへ戻る</dd></div>
+          <div><dt>Ctrl + ドラッグ</dt><dd>表示位置を移動</dd></div>
+          <div><dt>Ctrl + Shift + ドラッグ</dt><dd>幅・高さを変更</dd></div>
+        </dl>
+      </section>
+      <p id="diagnostics" class="diagnostics" aria-live="polite">状態を確認中…</p>
+    </main>
+    <script src="popup.js"></script>
+  </body>
+</html>

@@ -1,0 +1,169 @@
+#yt-live-overlay-root.yt-live-overlay {
+  position: fixed !important;
+  top: var(--yt-live-overlay-y, 45%) !important;
+  right: auto !important;
+  bottom: auto !important;
+  left: var(--yt-live-overlay-x, 82%) !important;
+  z-index: 2147483647 !important;
+  display: flex !important;
+  width: min(var(--yt-live-overlay-width, 420px), calc(100vw - 24px)) !important;
+  height: min(var(--yt-live-overlay-height, 70vh), calc(100vh - 24px)) !important;
+  pointer-events: none !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  overflow: hidden !important;
+  transform: translate(-50%, -50%) !important;
+  transition: none !important;
+  animation: none !important;
+  filter: none !important;
+  content-visibility: visible !important;
+  isolation: isolate !important;
+  will-change: transform !important;
+  box-sizing: border-box;
+  align-items: flex-end;
+  font-family: Roboto, Arial, sans-serif;
+  color: #fff;
+  text-align: left;
+  text-shadow: 0 1px 2px rgb(0 0 0 / 80%);
+}
+
+#yt-live-overlay-root[hidden] {
+  display: none !important;
+}
+
+#yt-live-overlay-root.yt-live-overlay--adjusting {
+  overflow: visible !important;
+  outline: 2px solid #ff3158 !important;
+  outline-offset: 2px !important;
+}
+
+.yt-live-overlay__list {
+  display: flex;
+  width: 100%;
+  min-width: 0;
+  max-height: 100%;
+  gap: 6px;
+  flex-direction: column;
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: none;
+}
+
+.yt-live-overlay__list::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+.yt-live-overlay__jump-latest {
+  position: absolute !important;
+  right: auto !important;
+  bottom: 12px !important;
+  left: 50% !important;
+  z-index: 2 !important;
+  display: grid !important;
+  width: 40px !important;
+  height: 40px !important;
+  min-width: 40px !important;
+  min-height: 40px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 50% !important;
+  background: #065fd4 !important;
+  box-shadow: 0 2px 8px rgb(0 0 0 / 45%) !important;
+  color: #fff !important;
+  cursor: pointer !important;
+  pointer-events: auto !important;
+  place-items: center !important;
+  transform: translateX(-50%) !important;
+  transition: background-color 120ms ease, transform 120ms ease !important;
+  appearance: none !important;
+}
+
+.yt-live-overlay__jump-latest[hidden] {
+  display: none !important;
+}
+
+.yt-live-overlay__jump-latest:hover {
+  background: #0b57d0 !important;
+  transform: translateX(-50%) scale(1.06) !important;
+}
+
+.yt-live-overlay__jump-latest:active {
+  transform: translateX(-50%) scale(0.96) !important;
+}
+
+.yt-live-overlay__jump-latest:focus-visible {
+  outline: 2px solid #fff !important;
+  outline-offset: 2px !important;
+}
+
+.yt-live-overlay__jump-latest svg {
+  display: block !important;
+  width: 24px !important;
+  height: 24px !important;
+  fill: currentColor !important;
+}
+
+.yt-live-overlay__message {
+  display: flex;
+  min-width: 0;
+  padding: 8px 10px;
+  border-radius: 6px;
+  background: rgb(0 0 0 / var(--yt-live-overlay-background-opacity, 0.58));
+  box-sizing: border-box;
+  gap: 8px;
+  align-items: flex-start;
+  font-size: var(--yt-live-overlay-font-size, 16px);
+  line-height: 1.4;
+  overflow-wrap: anywhere;
+}
+
+.yt-live-overlay__message--superchat {
+  border-left: 4px solid #29b6f6;
+}
+
+.yt-live-overlay__message--membership {
+  border-left: 4px solid #2ba640;
+}
+
+.yt-live-overlay__message--sticker {
+  border-left: 4px solid #f9a825;
+}
+
+.yt-live-overlay__icon {
+  width: 24px;
+  height: 24px;
+  flex: 0 0 24px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.yt-live-overlay__text {
+  min-width: 0;
+}
+
+.yt-live-overlay__author {
+  font-weight: 700;
+}
+
+.yt-live-overlay__body {
+  font-weight: 400;
+  white-space: pre-wrap;
+}
+
+.yt-live-overlay__emoji {
+  display: inline-block;
+  width: auto;
+  height: 1.55em;
+  margin: -0.25em 2px 0;
+  vertical-align: middle;
+  object-fit: contain;
+}
+
+@media (max-width: 720px) {
+  .yt-live-overlay__message {
+    padding: 6px 8px;
+  }
+}
